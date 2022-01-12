@@ -641,7 +641,7 @@ syncId=21
 
 ### 禁言群成员
 
-使用此方法指定群禁言指定群员（需要有相关限权）
+使用此方法指定群禁言指定群员（需要有相关权限）
 
 ```python
 ws.mute(group_id: int, user_id: int, set_time: int = 600)
@@ -651,7 +651,7 @@ syncId=22
 
 ### 解除群成员禁言
 
-使用此方法指定群解除群成员禁言（需要有相关限权）
+使用此方法指定群解除群成员禁言（需要有相关权限）
 
 ```python
 ws.unmute(group_id: int, user_id: int)
@@ -661,7 +661,7 @@ syncId=23
 
 ### 移除群成员
 
-使用此方法移除指定群成员（需要有相关限权）
+使用此方法移除指定群成员（需要有相关权限）
 
 ```python
 ws.kick(group_id: int, user_id: int, msg: str = "您已被移出群聊")
@@ -682,7 +682,7 @@ syncId=25
 
 ### 全体禁言
 
-使用此方法令指定群进行全体禁言（需要有相关限权）
+使用此方法令指定群进行全体禁言（需要有相关权限）
 
 ```python
 ws.muteAll(group_id: int)
@@ -692,7 +692,7 @@ syncId=26
 
 ### 解除全体禁言
 
-使用此方法令指定群解除全体禁言（需要有相关限权）
+使用此方法令指定群解除全体禁言（需要有相关权限）
 
 ```python
 ws.unmuteAll(group_id: int)
@@ -702,7 +702,7 @@ syncId=27
 
 ### 设置群精华消息
 
-使用此方法添加一条消息为精华消息（需要有相关限权）
+使用此方法添加一条消息为精华消息（需要有相关权限）
 
 ```python
 ws.setEssence(messageId: int)
@@ -722,7 +722,7 @@ syncId=29
 
 ### 修改群设置
 
-使用此方法修改群设置（需要有相关限权）
+使用此方法修改群设置（需要有相关权限）
 
 ```python
 ws.groupConfig_update(group_id: int, config: dict)
@@ -754,7 +754,7 @@ syncId=31
 
 ### 修改群员设置
 
-使用此方法修改群员设置（需要有相关限权）
+使用此方法修改群员设置（需要有相关权限）
 
 ```python
 ws.memberInfo_update(group_id: int, user_id: int, info: dict)
@@ -772,7 +772,7 @@ syncId=32
 
 ### 修改群员管理员
 
-使用此方法修改群员的管理员权限（需要有群主限权）
+使用此方法修改群员的管理员权限（需要有群主权限）
 
 ```python
 ws.memberAdmin(group_id: int, user_id: int, isAdmin: bool)
