@@ -790,6 +790,8 @@ syncId=33
 ws.resp_newFriendRequestEvent(event_id: int, bot_id: int, group_id: int, operate: int, msg: str)
 ```
 
+> `msg`返回给对方的消息
+
 > groupId对应申请人的群号，可能为0
 
 | operate | 说明                                               |
@@ -808,6 +810,8 @@ syncId=34
 ws.resp_memberJoinRequestEvent(event_id:int, bot_id: int, group_id: int, operate: int, msg: str)
 ```
 
+> `msg`返回给对方的消息
+
 | operate | 说明                                           |
 | ------- | ---------------------------------------------- |
 | 0       | 同意入群                                       |
@@ -823,8 +827,10 @@ syncId=35
 使用此方法处理Bot被邀请入群申请
 
 ```python
-ws.resp_botInvitedJoinGroupRequestEvent
+ws.resp_botInvitedJoinGroupRequestEvent(event_id: int, bot_id: int, group_id: int, operate: int, msg: str)
 ```
+
+> `msg`返回给对方的消息
 
 | operate | 说明     |
 | ------- | -------- |
