@@ -1,4 +1,4 @@
-## Mirai-api-http on Python
+## Mirai-api-http for Python
 
 > 需要安装websocket-client(pip install socket-client)
 
