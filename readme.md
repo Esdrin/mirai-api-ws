@@ -1,6 +1,6 @@
 ## Mirai-api-http for Python
 
-> 需要安装websocket-client(pip install socket-client)
+> 需要安装websocket-client(pip install websocket-client)
 
 提供基于 websocket client 的接口
 
