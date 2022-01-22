@@ -71,6 +71,15 @@ class ws:
         else:
             return {"id": 2, "msg": "Connection lost"}
 
+    def disconnect(self):
+        """
+        This function is used to disconnect from server.
+        """
+        try:
+            self.ws.close()
+            return {"id": 0, "msg": "Connection broken"}
+        except:
+            return {"id": 1, "msg": "Connection lost"}
     def command(self, passch: int, cmd: str, content: dict = {}, subcmd: str = "") -> dict:
         try:
             self.ws.send(
