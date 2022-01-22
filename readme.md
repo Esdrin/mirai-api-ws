@@ -82,6 +82,8 @@
 
 ## 认证与会话
 
+### 认证
+
 ```python
 import mirai-api-ws
 ws=mirai_api_ws.ws(
@@ -92,6 +94,14 @@ ws=mirai_api_ws.ws(
 ws.connect()                // 连接
 ```
 >注意在连接后将自动订阅所有的消息和事件
+
+### 释放
+
+断开连接
+
+```python
+ws.disconnect()
+```
 
 ## 接收消息与事件
 
