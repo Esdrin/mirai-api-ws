@@ -1,4 +1,4 @@
-## Mirai-api-http for Python
+## Mirai-api-http(V2.0+) for Python
 
 提供基于 websocket client 的接口
 
@@ -6,7 +6,7 @@
 
 提供基于 http 轮询的接口
 
-> 需要安装request(pip install request)
+> 需要安装requests(pip install requests)
 
 ### 友情链接
 
