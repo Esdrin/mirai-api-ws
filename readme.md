@@ -1,8 +1,12 @@
 ## Mirai-api-http for Python
 
+提供基于 websocket client 的接口
+
 > 需要安装websocket-client(pip install websocket-client)
 
-提供基于 websocket client 的接口
+提供基于 http 轮询的接口
+
+> 需要安装request(pip install request)
 
 ### 友情链接
 
@@ -43,6 +47,7 @@
   + [删除文件](#删除文件)
   + [移动文件](#移动文件)
   + [重命名文件](#重命名文件)
+  + [上传文件](#上传文件)
 + **[消息类型](#消息类型)**
   + [Source](#Source)
   + [回复](#Quote)
@@ -85,14 +90,15 @@
 ### 认证
 
 ```python
-import mirai-api-ws
-ws=mirai_api_ws.ws(
+import [py_file]            // 这边的py_file为2个文件之一
+ws=[py_file].ws(
     "ws://xxxx.xxx:xxxx",   // 服务端url
     "JBSAIYDAS7SAD8BIA",    // 服务端配置文件的密码
     1234567890              // 机器人ID
 )
 ws.connect()                // 连接
 ```
+
 >注意在连接后将自动订阅所有的消息和事件
 
 ### 释放
@@ -116,6 +122,8 @@ ws.disconnect()
   "data":{}         // 数据主体
 }
 ```
+
+syncId为消息信道，只限于`websock-client`时使用
 
 #### 推送格式
 
@@ -335,6 +343,18 @@ ws.file_rename(target_id: int, path_id: str, name: str)
 > name:           名称
 
 syncId=20
+
+### 上传文件
+
+```python
+ws.file_upload(self,group_id:int,file_path:str,file_name)
+```
+
+> group_id:      群号
+> file_path:     服务器目录
+> file_name:     文件名称
+
+只适用于`http轮询`接口
 
 ## 消息类型
 
