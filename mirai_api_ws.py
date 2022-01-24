@@ -77,7 +77,7 @@ class ws:
         """
         try:
             self.ws.close()
-            return {"id": 0, "msg": "Connection broken"}
+            return {"id": 0, "msg": "Closed successfully"}
         except:
             return {"id": 1, "msg": "Connection lost"}
     def command(self, passch: int, cmd: str, content: dict = {}, subcmd: str = "") -> dict:
@@ -96,13 +96,6 @@ class ws:
             return {"id": 0}
         except:
             return {"id": 1}
-
-    def disconnect(self) -> dict:
-        try:
-            self.ws.close()
-            return {"id": 0, "msg": "Closed successfully"}
-        except:
-            return {"id": 2, "msg": "Connection lost"}
 
     """
     下面是根据mirai-api-http写的接口，可以直接调用并且有函数注解
