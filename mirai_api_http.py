@@ -76,7 +76,7 @@ class ws:
         except:
             return {"id": 1, "msg": "Connection lost"}
 
-    def command_post(self, cmd: str, content: dict = {}):
+    def command_post(self, cmd: str, content: dict={}):
         content["sessionKey"] = self.sessionKey
         rep = requests.post(
             self.url+f"/{cmd}?",
@@ -87,11 +87,11 @@ class ws:
             code = 2
         return {"id":code,"msg":rep["msg"],"data":rep}
 
-    def command_get(self, cmd: str, content: dict = ({})):
+    def command_get(self, cmd: str, content: dict={}):
         content["sessionKey"]=self.sessionKey
         text = ""
-        for key,value in content:
-            text+= f"{key}={value}&"
+        for key,value in content.items():
+            text+= f"{str(key)}={str(value)}&"
         rep = requests.get(
             self.url+f"/{cmd}?{text[:-1]}",
             json=content
