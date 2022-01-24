@@ -18,12 +18,12 @@ class ws:
     def __init__(self, server_url: str, key: str, qqid: int):
         """
         Init your config , and need:
-            server_url  : your server url(e.g. "ws://xxxx.xxx:xxxx")
+            server_url  : your server url(e.g. "xxxx.xxx:xxxx")
             key         : the key you set on the server
             qqid        : your bot's qq ID
         """
         self.ws = websocket.WebSocket()
-        self.url = str(server_url)
+        self.url = "ws://"+str(server_url)
         self.key = str(key)
         self.qqid = int(qqid)
 
