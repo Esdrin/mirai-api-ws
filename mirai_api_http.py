@@ -6,7 +6,7 @@ class ws:
         Format:
             {
                 "id": 0~2       // This uses to pass state id
-                    // 0:normal 1:allowed error 2:uncorrectable error
+                    // 0:normal other:error
                 "msg": ""       // This uses to pass message information
                     // For example "Connection succeeded",and this will be able to be printed.
                 "data": all     // This uses to pass data information
@@ -78,29 +78,20 @@ class ws:
 
     def command_post(self, cmd: str, content: dict={}):
         content["sessionKey"] = self.sessionKey
-        rep = requests.post(
+        return requests.post(
             self.url+f"/{cmd}?",
             json=content
         ).json()
-        code = 0
-        if rep["code"] != 0:
-            code = 2
-        return {"id":code,"msg":rep["msg"],"data":rep}
 
     def command_get(self, cmd: str, content: dict={}):
         content["sessionKey"]=self.sessionKey
         text = ""
         for key,value in content.items():
             text+= f"{str(key)}={str(value)}&"
-        rep = requests.get(
+        return requests.get(
             self.url+f"/{cmd}?{text[:-1]}",
             json=content
         ).json()
-        code = 0
-        if rep["code"] != 0:
-            code = 2
-        return {"id":code,"msg":rep["msg"],"data":rep}
-
     """
     下面是根据mirai-api-http写的接口，可以直接调用并且有函数注解
     """
