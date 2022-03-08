@@ -92,7 +92,7 @@
 ```python
 import [py_file]            // 这边的py_file为2个文件之一
 ws=[py_file].ws(
-    "ws://xxxx.xxx:xxxx",   // 服务端url
+    "[IP]:[PORT]",   // 服务端url
     "JBSAIYDAS7SAD8BIA",    // 服务端配置文件的密码
     1234567890              // 机器人ID
 )
